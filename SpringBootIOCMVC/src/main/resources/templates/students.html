@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="styleSheet" type="text/css" href="../static/css/bootstrap.min.css"  th:href="@{/css/bootstrap.min.css}"></link>
+	<link rel="styleSheet" type="text/css" href="../static/css/myStyle.css" th:href="@{/css/myStyle.css}"></link>
+	<title>Students List</title>
+</head>
+
+<body>
+<div class="container spacer">
+  <form th:action="@{Index}" method="get" class="form-group">
+    <label>Key World:</label>
+    <input type="text" name="p_kW" th:value="${p_kW}"/>
+    <button type="submit">Find</button>
+  </form>
+</div>
+
+<div class="container spacer" >
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th> <th>Name</th> <th>Birth Date</th> <th>Email</th> <th>Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr th:each="s:${listStudents.content}">
+    	  <td th:text="${s.id}"></td>
+    	  <td th:text="${s.name}"></td>
+    	  <td th:text="${s.birthDate}"></td>
+    	  <td th:text="${s.email}"></td>
+    	  <td th:text="${s.picture}"></td>
+    	</tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="container">
+  <ul class="nav nav-pills">
+    <li th:each="p:${pagePagination}" th:class="${p==currentPage}?active:''">
+      <a th:text="${p}" th:href="@{Index(p_page=${p} , p_kW=${p_kW})}" href=""></a>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
