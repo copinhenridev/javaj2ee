@@ -1,0 +1,38 @@
+This project is a bank project based on course of Professor Mohamed Youssfi.
+
+This project use springboot, jpa, Rest, RMI and SOAP technologies.
+
+Functionalities are exposed by rest, soap and rmi protocol. 
+
+An java client is build to consume rmi service
+Specifications
+*****************
+
+Business Rules
+**************
+1. Each account is defined by a number, a balance and a date of creation.
+2. A current account is an account that also has an overdraft.
+3. A savings account is an account that has more than one interest rate
+4. Each account belongs to a customer and is created by an employee.
+5. Each client is defined by its code and name.
+6. Each employee has a supervisor.
+7. Each employee can belong to several groups.
+8. Each group is defined by a code and a name; it can contain several employees.
+9. Each account can undergo multiple transactions;
+10. There are two types of transactions: Payment and Withdrawal
+11. Operation performed by an employee.
+12. An operation is defined by a number, a date and an amount.
+
+Functional Specifications:
+**************************
+1. Add groups
+2. Add employees
+3. Assign employees to groups
+4. Add customers
+5. Add accounts
+6. Make payments into an account
+7. Make a withdrawal in an account
+8. Make transfers from one account to another
+9. View an account
+10. View a client's accounts
+11. View an account operations page
